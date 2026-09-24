@@ -718,8 +718,8 @@ show ip route static
 ~~~
 !@A2
 conf t
- ip route 0.0.0.0 0.0.0.0 192.168.1.__  __
- ip route 0.0.0.0 0.0.0.0 192.168.1.__  __
+ ip route 0.0.0.0 0.0.0.0 192.168.1.130 10
+ ip route 0.0.0.0 0.0.0.0 192.168.1.129 1
  end
 ~~~
 
@@ -791,7 +791,7 @@ Why does P1 need to take 2 hop counts to reach D2's VLAN 100?
 Configure a host static route that takes advantage of the longest prefix rule to allow P1 to go directly to D2 instead of D1.
 ~~~
 !@P1
-conf t
+conf t (reduce hoping
  ip route 192.168.1.130 255.255.255.255 10.2.1.2
  end
 ~~~
